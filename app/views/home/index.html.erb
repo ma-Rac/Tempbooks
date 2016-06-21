@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="container">
 <h1> Welcome to Tempbook! </h1>
 
@@ -43,3 +44,18 @@
     </div>
   </div>
 </div>
+=======
+<h1> Welcome to Tempbook </h1>
+<% if !user_signed_in? %>
+    <h2> You Have To Login To Begin </h2>
+<%= link_to "Sign in", new_user_session_path %>
+<%= link_to "Join the fun!", new_user_registration_path %>
+<% end %>
+
+<% if user_signed_in? %>
+<li>Welcome <%= current_user.email %> !</li>
+<li><%= link_to('Your profile', user_profile_path) %></li>
+<li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+<li><%= link_to('START', posts_path) %></li>
+<% end %>
+>>>>>>> 5c937baed0b993b8332f99bc77d9ec2c6559d20b
