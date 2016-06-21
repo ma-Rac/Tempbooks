@@ -1,3 +1,28 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+h1 {
+  text-align: center;
+}
+
+.signinform {
+  // float: left;
+  max-width: 550px;
+  padding: 15px;
+  margin: 0 auto;
+  // margin-left: 650px;
+  border: 10px;
+  border-color: black;
+  background-color: white;
+}
+
+.registerform {
+  // clear: right;
+  max-width: 550px;
+  padding: 15px;
+  margin: 0 auto;
+  // margin-left: 10px;
+  border: 10px;
+  border-color: black;
+  background-color: white;
+}
