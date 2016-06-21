@@ -37,8 +37,7 @@ nav ul li a {
       </div>
 
 <%= yield %>
+<%= link_to "Logout", destroy_user_session_path , :method => :delete %>
 
 </body>
 </html>
-
-<li><%= link_to "Log In", new_user_session_path %></li>
