@@ -1,19 +1,14 @@
-<<<<<<< HEAD
 <div class="container">
 <h1> Welcome to Tempbook! </h1>
 
 <% if !user_signed_in? %>
 
 <div class="signinform">
-  <div class="col s12 m4 l3">
     <%= form_for(:user, :url => session_path(:user), class: "form-signin") do |f| %>
       <h2 class="form-signin-heading">Sign in</h2>
         <%= f.text_field :email, class: "form-control", placeholder:"Email address"  %>
         <label for="inputPassword" class="sr-only">Password</label>
         <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
-          <label>
-            <%= f.check_box :remember_me %> Remember me
-          </label>
         <%= f.submit 'Sign in', class: "btn btn-lg btn-primary btn-block" %>
       <%= link_to "Forgot your password?", new_password_path(:user) %>
     <% end %>
@@ -22,7 +17,6 @@
 
 <div class="registerform">
   <div class="row">
-    <div class="col s12 m8 l9">
       <%= form_for(:user, :url => registration_path(:user), class:"form-register") do |f| %>
       <h2 class="form-register-heading">Register</h2>
         <label for="inputName" class="sr-only">Name</label>
@@ -44,18 +38,3 @@
     </div>
   </div>
 </div>
-=======
-<h1> Welcome to Tempbook </h1>
-<% if !user_signed_in? %>
-    <h2> You Have To Login To Begin </h2>
-<%= link_to "Sign in", new_user_session_path %>
-<%= link_to "Join the fun!", new_user_registration_path %>
-<% end %>
-
-<% if user_signed_in? %>
-<li>Welcome <%= current_user.email %> !</li>
-<li><%= link_to('Your profile', user_profile_path) %></li>
-<li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
-<li><%= link_to('START', posts_path) %></li>
-<% end %>
->>>>>>> 5c937baed0b993b8332f99bc77d9ec2c6559d20b
