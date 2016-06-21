@@ -19,7 +19,6 @@ class ProfileController < ApplicationController
   end
 
   def show
-    @listings1 = Listing.where(user_id: current_user.id)
   end
 
   def edit
