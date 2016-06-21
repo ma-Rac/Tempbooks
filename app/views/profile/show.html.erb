@@ -1,0 +1,13 @@
+<h1>Your profile</h1>
+<div class="profile">
+    Name:
+    <%= @profile.name %><br>
+    Bio:
+    <%= @profile.description %><br>
+    <br>
+    <%= link_to('New listing', new_listing_path)  %><br>
+    <%= link_to('Edit your profile', user_edit_profile_path)  %>
+</div>
+<div class="avatar">
+    <img src="<%= @profile.avatar %>" width="100px"/>
+</div>
