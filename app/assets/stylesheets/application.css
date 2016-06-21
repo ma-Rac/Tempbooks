@@ -13,3 +13,23 @@
  *= require_tree .
  *= require_self
  */
+body {
+  background-color: #5A5050;
+  /*background-image: url("http://ishworgyawali.neocities.org/Gray-plain-website-background.jpg");*/
+  color: #C0C0C0;
+  text-align: center;
+}
+
+#page-wrap {
+  text-align: center;
+  width: 800px;
+  margin: 0 auto;
+}
+
+.navbar {
+  background-color: #547A82;
+}
+
+.btn {
+  color: black;
+}
