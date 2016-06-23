@@ -1,6 +1,8 @@
 <h1> Here are your.... "Friends", for now at least, cherish them. </h1>
 
+<div class="friendslist">
 <% @friends.each do |friend| %>
+  <%=link_to image_tag(friend.profile.avatar), friend %> <br>
 <%=link_to friend.profile.name, friend %><br>
-<%=link_to image_tag(friend.profile.avatar), friend %> <br>
 <%end %>
+</div>
