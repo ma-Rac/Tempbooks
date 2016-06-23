@@ -25,8 +25,9 @@
               <button onclick="location.href='/'" class="navbutton">TempBook</button></ul>
                 <ul class="right hide-on-med-and-down">
                   <% if user_signed_in? %>
+                  <button onclick="location.href='/friends'" class="navbutton">Your friends</button>
+                  <button onclick="location.href='/posts'" class="navbutton">Friend posts</button>
                   <button onclick="location.href='/user/profile'" class="navbutton">Your profile</button>
-                  <button onclick="location.href='/posts'" class="navbutton">Posts</button>
                   <button onclick="location.href='/posts/new'" class="navbutton">Add new post</button>
                   <% end %>
                 </ul>
