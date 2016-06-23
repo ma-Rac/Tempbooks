@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'friendships/create'
-
-  get 'friendships/e'
-
+  get 'friendships/create' => "friendships#create", as: :populate
   resources :friends
   resources :posts
   devise_for :users
