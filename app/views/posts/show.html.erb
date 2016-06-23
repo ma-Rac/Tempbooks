@@ -1,24 +1,17 @@
-<h1> The Best Feed </h1>
-<%= form_for @post do |f| %>
-
-    <%= f.hidden_field :user_id, :value => current_user.id %>
-
-    <div class="form-group">
-       <%= f.label :title %>
-       <%= f.text_field :title, class: "form-control", placeholder: "title" %>
-    </div>
-
-    <div class="form-group">
-       <%= f.label :description %>
-       <%= f.text_field :description, class: "form-control", placeholder: "Decription"   %>
-    </div>
-
-    <div class="form-group">
-       <%= f.label :image %>
-       <%= f.text_field :image, class: "form-control", placeholder: "image" %>
-    </div>
+<h1>Your post</h1>
+<div class="post">
+    <h4>Title:</h4>
+    <%= @post.title %>
     <br>
 
-    <%= f.submit (@post.new_record? ? "Create" : "Update"), class: "form-control btn-primary" %>
+    <h4>Description:</h4>
+    <%= @post.description %>
+    <br>
 
-<% end %>
+    <h4>Image:</h4>
+    <%= @post.image %><br>
+    <br>
+
+    <button onclick="location.href='/posts/update'" class="navbutton">Edit post</button>
+    <button onclick="location.href='/posts/new'" class="navbutton">Add another post</button>
+</div>
