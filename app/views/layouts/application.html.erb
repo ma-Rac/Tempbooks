@@ -14,21 +14,18 @@
      $(".dropdown-button").dropdown();
   });
 </script>
-<style>
-nav ul li a {
-  color: black;
-}
-</style>
+
 </head>
 <body>
 <div class="navbar">
-  <div class="row" style="width: 100%; height: 100%; ">
     <div class="navbar-fixed">
-        <nav class=" blue-grey">
-              <a href="#!" class="brand-logo">TempBook</a>
+            <ul class="left hide-on-med-and-down">
+              <button onclick="location.href='/'" class="navbutton">TempBook</button></ul>
                 <ul class="right hide-on-med-and-down">
-                  <li><a href="profile#index.html">Profile</a></li>
-                  <li><a href="posts#index.html">Posts</a></li>
+                  <% if user_signed_in? %>
+                  <button onclick="location.href='user/profile'" class="navbutton">Your profile</button>
+                  <button onclick="location.href='posts'" class="navbutton">Posts</button>
+                  <% end %>
                 </ul>
               </div>
             </nav>
@@ -37,7 +34,11 @@ nav ul li a {
       </div>
 
 <%= yield %>
-<%= link_to "Logout", destroy_user_session_path , :method => :delete %>
+
+<div class="footer">
+  <a class="credits"><b>Created by: </b>Aeshta, Mariano and Jake --- <a>
+    <a class="footerlink"><%= link_to "Logout", destroy_user_session_path , :method => :delete %></a>
+</div>
 
 </body>
 </html>
