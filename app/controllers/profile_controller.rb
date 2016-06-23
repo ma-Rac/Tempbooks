@@ -18,19 +18,18 @@ class ProfileController < ApplicationController
     end
   end
 
-  def show
-
-  end
-
-  def edit
-  end
-
   def update
     if @profile.update(profile_params)
       redirect_to action: :show, notice: "Success!!1"
     else
       render :edit
     end
+  end
+
+  def show
+  end
+
+  def edit
   end
 
   def destroy

@@ -15,6 +15,14 @@ class PostsController < ApplicationController
   def edit
   end
 
+  def update
+    if @post.update(post_params)
+      redirect_to action: :show, notice: "Succes!!"
+    else
+      render :edit
+    end
+  end
+
   def create
     @post = Post.new(profile_params)
     @post.user = current_user
