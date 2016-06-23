@@ -3,23 +3,21 @@
 
 <% if !user_signed_in? %>
 
-<div class="signinform">
+<div class="signinform" style="float:left; width: 300px;">
     <%= form_for(:user, :url => session_path(:user), class: "form-signin") do |f| %>
-      <h2 class="form-signin-heading">Sign in</h2>
+      <h4 class="form-signin-heading" style="color:white;">Sign in</h4>
         <%= f.text_field :email, class: "form-control", placeholder:"Email address"  %>
         <label for="inputPassword" class="sr-only"></label>
         <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
         <%= f.submit 'Sign in', class: "btn btn-lg btn-primary btn-block" %>
-      <%= link_to "Forgot your password?", new_password_path(:user) %>
+      <div class="password" style="color:white;" <%= link_to "Forgot your password?", new_password_path(:user) %></div>
       <% end %>
+    </div>
 
-
-    <li><%= link_to "Log In", new_user_session_path %></li>
-
-    <div class="registerform">
+    <div class="registerform" style="float:right; width: 300px;">
       <div class="row">
           <%= form_for(:user, :url => registration_path(:user), class:"form-register") do |f| %>
-          <h2 class="form-register-heading">Register</h2>
+          <h4 class="form-register-heading" style="color:white;">Register</h4>
               <label for="inputEmail" class="sr-only"></label>
                 <%= f.email_field :email,  class:"form-control", placeholder:"Email address" %>
 
@@ -34,11 +32,13 @@
         <% end %>
   </div>
 </div>
+<p style="color: white;">Get a social life now! Don't like your current friends? Replace them!</P>
+
 
 <% if user_signed_in? %>
 <div class="homebuttons">
-<button onclick="location.href='/user/profile'" class="navbutton" style="height:100px; width:400px;">Your profile</button>
-<button onclick="location.href='/posts'" class="navbutton" style="height:100px; width:400px">Start</button>
+<button onclick="location.href='/user/profile'" class="navbutton" style="height:100px; width:400px; font-size:50px;">Your profile</button>
+<button onclick="location.href='/posts'" class="navbutton" style="height:100px; width:400px; font-size:50px;">Start</button>
 </div>
         <% end %>
       </div>
