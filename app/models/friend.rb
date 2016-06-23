@@ -1,3 +1,4 @@
 class Friend < ActiveRecord::Base
-  belongs_to :user
+  self.table_name = :users
+  has_many :friendships
 end
