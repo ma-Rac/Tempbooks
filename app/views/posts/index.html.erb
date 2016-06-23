@@ -1,7 +1,7 @@
 <h1> The Best Feed </h1>
 
-<% @posts.each do |post| %>
-<%= post.title %>
-<%= image_tag(post.image) %>
+<% @posts.limit(20).each do |post| %>
+<%= post.title %> <br>
+<%= image_tag(post.image) %><br>
 <%= post.description %>
 <%end%>
