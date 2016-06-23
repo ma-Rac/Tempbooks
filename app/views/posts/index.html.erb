@@ -1,5 +1,7 @@
 <h1> The Best Feed </h1>
 
+<button onclick="location.href='/posts/create'" class="navbutton">Add your own post!</button>
+
 <% @posts.each do |post| %>
 <%= post.title %>
 <%= image_tag(post.image) %>

@@ -5,9 +5,9 @@
     Bio:
     <%= @profile.description %><br>
     <br>
-    
-    <%= link_to('Edit your profile', user_edit_profile_path)  %>
+    <button onclick="location.href='/user/profile/edit'" class="navbutton">Edit profile</button>
+    <button onclick="location.href='/posts/create'" class="navbutton">Add new post</button>
 </div>
 <div class="avatar">
-    <img src="<%= @profile.avatar %>" width="100px"/>
+    <img src="<%= @profile.avatar %>" width="400px" height="400px"/>
 </div>
