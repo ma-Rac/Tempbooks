@@ -20,9 +20,6 @@
       <div class="row">
           <%= form_for(:user, :url => registration_path(:user), class:"form-register") do |f| %>
           <h2 class="form-register-heading">Register</h2>
-            <label for="inputName" class="sr-only"></label>
-            <%= f.text_field :name,  class:"form-control", placeholder:"Name" %>
-
               <label for="inputEmail" class="sr-only"></label>
                 <%= f.email_field :email,  class:"form-control", placeholder:"Email address" %>
 
