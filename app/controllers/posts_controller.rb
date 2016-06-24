@@ -17,7 +17,7 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      redirect_to action: :show, notice: "Succes!!"
+      redirect_to @post, notice: "Succes!!"
     else
       render :edit
     end
@@ -28,7 +28,7 @@ class PostsController < ApplicationController
     @post.user = current_user
 
     if @post.save
-      redirect_to action: :show, notice: "Success!!1"
+      redirect_to @post, notice: "Success!!1"
     else
       render :new
     end
