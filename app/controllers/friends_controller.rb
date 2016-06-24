@@ -1,8 +1,6 @@
 class FriendsController < ApplicationController
   def create
-
-    end
-
+  end
 
   def index
     @friends = current_user.friends.joins(:profile).

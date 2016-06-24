@@ -1,5 +1,4 @@
 <%= form_for @post do |f| %>
-
     <%= f.hidden_field :user_id, :value => current_user.id %>
 
     <div class="form-group">
@@ -19,6 +18,5 @@
     </div>
     <br>
 
-    <%= f.submit (@post.new_record? ? "Create" : "Update"), class: "form-control btn-primary" %>
-
+    <%= f.submit  %>
 <% end %>
