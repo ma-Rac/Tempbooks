@@ -14,3 +14,15 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+$(function(){
+    $(window).scroll(function(){
+        if($(document).scrollTop() > 100)
+        {
+              $('#footer').addClass("show");
+        }
+        else
+        {
+            $('#footer').removeClass("show");
+        }
+    });
+})​

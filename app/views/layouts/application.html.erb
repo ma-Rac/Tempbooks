@@ -23,7 +23,13 @@
 <div class="navbar">
     <div class="navbar-fixed">
             <ul class="left hide-on-med-and-down">
-              <button onclick="location.href='/'" class="navbutton">TempBook</button></ul>
+            <!-- <img src="/assets/Tempbooklogo3.pgn"> -->
+
+
+              <%= link_to(image_tag("Tempbooklogo5.png" , id:"logosT"), root_path, class: 'navbar-brand' ) %>
+            </ul>
+              <%# link_to image_tag('app/assets/images/Tempbooklogo2.png'), root_path %>
+              <!-- <% link_to image_tag('app/assets/images/Tempbooklogo3.png'), root_path %> -->
                 <ul class="right hide-on-med-and-down">
                   <% if user_signed_in? %>
                   <button onclick="location.href='/friendships/create'" class="navbutton">Change my friends again</button>
@@ -44,7 +50,7 @@
 <%= yield %>
 
 <div class="footer">
-  <a class="credits" style="color:white;"><b>Created by: </b>Aeshta, Mariano and Jake --- <a>
+  <a class="credits" style="color:black;"><b>Created by: </b>Aeshta, Mariano and Jake --- <a>
     <a class="footerlink"><%= link_to "Logout", destroy_user_session_path , :method => :delete %></a>
 </div>
 
