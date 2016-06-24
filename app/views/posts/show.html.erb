@@ -1,6 +1,6 @@
 <h2>Post</h2>
 <div class="post">
-  
+
     <h4>Title:</h4>
     <%= @post.title %>
     <br>
@@ -12,6 +12,25 @@
     <h4>Image:</h4>
     <%= image_tag(@post.image) %><br>
     <br>
+    Comments:<br>
+    <% @post.comments.each do |com| %>
+    <%= com.comment %><br>
+    <%end%>
+
+    <%= form_for @comment do |f| %>
+        <%= f.hidden_field :user_id, :value => current_user.id %>
+
+        <div class="form-group">
+           <%= f.text_field :comment, class: "form-control", placeholder: "you wanna say wut?" %>
+        </div>
+        <br>
+
+
+        <%= hidden_field_tag(:post_id, "#{@post.id}") %>
+        <%= f.submit %>
+    <% end %>
+
+
 
     <button onclick="location.href='/posts/update'" class="navbutton">Edit post</button>
     <button onclick="location.href='/posts/new'" class="navbutton">Add another post</button>

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   get 'comments/new'
 
-  get 'comments/create'
+  post 'comments/create', as: :comments
 
   get 'friendships/create' => "friendships#create", as: :populate
   resources :friends
