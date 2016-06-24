@@ -78,6 +78,7 @@ allusers = User.all
 
 allusers.each do |user|
   3.times do
-    Post.create(title: Faker::Hipster.sentences(1), image: Faker::Avatar.image, description: Faker::Hipster.sentences(1), user: user)
+    pust = Post.create(title: Faker::Hipster.sentences(1), image: Faker::Avatar.image, description: Faker::Hipster.sentences(1), user: user)
+    Comment.create(comment: Faker::Hipster.sentences(1), user: allusers.sample, post: pust)
   end
 end

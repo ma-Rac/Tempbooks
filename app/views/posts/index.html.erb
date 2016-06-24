@@ -1,7 +1,11 @@
 <h1> The Best Feed </h1>
 
 <% @posts.limit(20).each do |post| %>
-<%= post.title %> <br>
+<h2><%=link_to post.title, post %></h2> <br>
 <%= image_tag(post.image) %><br>
-<%= post.description %>
+<strong><%= post.description %> </strong><br>
+<% post.comments.each do |comment| %>
+<%= link_to comment.user.profile.name, user_show_friend_path(comment.user.profile) %>
+<%= comment.comment  %> <br>
+<%end%>
 <%end%>

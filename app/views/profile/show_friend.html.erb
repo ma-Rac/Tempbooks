@@ -1,0 +1,14 @@
+<h1>Your profile</h1>
+<div class="profile">
+    Name:
+    <%= @profile.name %><br>
+    Bio:
+    <%= @profile.description %><br>
+    <br>
+    <button onclick="location.href='/user/profile/edit'" class="navbutton">Edit profile</button>
+    <button onclick="location.href='/posts/new'" class="navbutton">Add new post</button>
+
+</div>
+<div class="avatar">
+    <img src="<%= @profile.avatar %>" width="400px" height="400px"/>
+</div>
