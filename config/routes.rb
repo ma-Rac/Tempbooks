@@ -1,17 +1,44 @@
 Rails.application.routes.draw do
 
+  get 'comments/new'
+
+  get 'comments/create'
+
   get 'friendships/create' => "friendships#create", as: :populate
   resources :friends
   resources :posts
   devise_for :users
+
+  # resources :users do
+  #   resource :profile
+  # end
+  #
+  # "/users/:user_id/profile"
+  # "/users/1/profile"
+  #
+  # def show
+  #   @user = User.find params[:user_id]
+  #   @profile = @user.profile
+  # end
+
+  # resources :users do
+  #   resources :profiles
+  # end
+
+
   namespace :user do
     get "/profile" => "/profile#show", as: :profile
+    get "/profile/:id" => "/profile#show_friend", as: :show_friend
     get "/profile/new" => "/profile#new", as: :new_profile
     post "/profile" => "/profile#create"
     get "/profile/edit" => "/profile#edit", as: :edit_profile
     put "/profile" => "/profile#update"
     patch "/profile" => "/profile#update"
     delete "/profile" => "/profile#destroy"
+
+    "/profile/:id"
+
+    "/profile"
   end
 
   root 'home#index'

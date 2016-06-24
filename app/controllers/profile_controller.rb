@@ -29,6 +29,11 @@ class ProfileController < ApplicationController
   def show
   end
 
+  def show_friend
+    @profile = Profile.find params[:id]
+    #render :show
+  end
+
   def edit
   end
 
